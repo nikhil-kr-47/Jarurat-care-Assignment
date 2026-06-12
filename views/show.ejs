@@ -1,0 +1,34 @@
+<%layout("./layouts/bp.ejs")%>
+<body>
+    <div class="container my-5 show-card" style="max-width: 500px;">
+        <div class="card">
+    
+          <h4 class="fw-bold">✅ Request Submitted Successfully</h4>
+          <p class="text-muted">Thank you for contacting Jarurat Care.</p>
+          <p><strong>Request ID:</strong> <%= requestId %></p>
+
+          <hr/>
+        <h3>Patient Details:</h3>
+        <p><strong>Name</strong> <%= fullName %></p>
+        <p><strong>Phone</strong> <%= phone %></p>
+           <p><strong>Support Type:</strong> <%= supportType %></p>
+    
+          <hr/>
+
+          <h3>Automated request Summary</h3>
+          <% if(priority === "High") { %>
+            <span class="badge bg-danger">High</span>
+        <% } else if(priority === "Medium") { %>
+            <span class="badge bg-warning">Medium</span>
+        <% } else { %>
+            <span class="badge bg-success">Low</span>
+        <% } %>
+
+          <div class="d-flex gap-2 mt-2">
+            <a href="/" class="btn btn-sm" style="background:#2a7a5e; color:#fff;">Home</a>
+            <a href="/support" class="btn btn-sm btn-outline-secondary">New Request</a>
+          </div>
+    
+        </div>
+      </div>
+</body>

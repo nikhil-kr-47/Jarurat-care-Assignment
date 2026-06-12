@@ -1,0 +1,73 @@
+<%layout("./layouts/bp.ejs")%>
+<body>
+    <div class="container my-5" style="max-width: 680px;">
+        <div class="mb-4">
+          <h2 class="fw-bold" style="color: #2a7a5e;">Need Healthcare Support?</h2>
+          <p class="text-muted">Fill the form below and our volunteers will review your request.</p>
+        </div>
+
+        <form action="/support" method="POST">
+
+            <!-- Section 1: Personal Details -->
+            <div class="card mb-4 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title mb-3">Personal Details</h5>
+      
+                <div class="mb-3">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" name="fullName" class="form-control" placeholder="Enter your full name" required />
+                </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" name="phone" class="form-control" placeholder="Enter your phone number" required />
+                  </div>
+        
+               </div>
+              </div>
+
+               <!-- Section 2: Support Required -->
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title mb-3">Support Required</h5>
+
+          <div class="mb-3">
+            <label class="form-label">Type of Support</label>
+            <select name="supportType" class="form-select" required>
+              <option value="" disabled selected>Select type of support</option>
+              <option>Medical Assistance</option>
+              <option>Medicine Support</option>
+              <option>Transportation</option>
+              <option>Doctor Consultation</option>
+              <option>Emergency Help</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+        </div>
+    </div>
+
+    <!-- Section 3: Describe Your Problem -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title mb-3">Describe Your Problem</h5>
+
+        <div class="mb-3">
+          <label class="form-label">Your Message</label>
+          <textarea name="description" class="form-control" rows="5"
+            placeholder="Please describe your issue in detail...&#10;&#10;Example: My mother needs medicines but we are unable to arrange transportation."
+            required></textarea>
+        </div>
+
+    </div>
+</div>
+
+<div class="d-grid">
+  <button type="submit" class="btn btn-lg" style="background:#2a7a5e; color:#fff;">
+    Submit Request
+  </button>
+</div>
+
+</form>
+</div>
+</body>
